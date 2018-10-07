@@ -8,6 +8,8 @@
 
 _Input a number into the box and submit! A neat list will be displayed that shows multiples of 3 as "Ping", multiples of 5 as "Pong", and multiples of 3 and 5 as "Ping-Pong". All other numbers will be displayed as a number. The list will be ony as ong as the number you entered._
 
+### Link to github
+
 ***
 
 ## Specs for Ping-Pong number list
