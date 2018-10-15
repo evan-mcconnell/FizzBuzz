@@ -1,4 +1,20 @@
-var inputNumber = 0;
+var pingPongAnswer = [];
+
+var answers = function(userNumber) {
+  pingPongAnswer = [];
+  for (i = 1; i <= userNumber; i++) {
+    if (i % 15 === 0) {
+      pingPongAnswer.push("Ping-Pong");
+    } else if (i % 5 === 0) {
+      pingPongAnswer.push("Pong");
+    } else if (i % 3 === 0) {
+      pingPongAnswer.push("Ping");
+    } else {
+      pingPongAnswer.push(i);
+    }
+  };
+  return pingPongAnswer;
+};
 
 
 
@@ -8,16 +24,12 @@ $(document).ready( function (){
     $("#outputList").empty();
     inputNumber = parseInt($("input#number").val());
     !isNaN(parseInt(inputNumber)) ? inputNumber : alert("Please make sure you entered a number!");
-    for (i=1; i <= inputNumber; i ++) {
-      if (i % 3 === 0 && i % 5 === 0) {
-        $("ul#outputList").append("<li>Ping-Pong</li>");
-      } else if (i % 3 === 0) {
-        $("ul#outputList").append("<li>Ping</li>");
-      } else if (i % 5 === 0) {
-        $("ul#outputList").append("<li>Pong</li>");
-      } else {
-        $("ul#outputList").append("<li>" + i + "</li>");
-      }
-    };
+    console.log(inputNumber);
+    var resultsArray = answers(inputNumber);
+    console.log(resultsArray);
+    var answerList = resultsArray.forEach( function(input){
+      $("#outputList").append("<li>" + input + "</li>");
+    });
+    $("#outputList").show();
   });
 });
